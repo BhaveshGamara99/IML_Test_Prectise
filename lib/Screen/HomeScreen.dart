@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:imltest_bhavesh/Screen/EditProfileScreen.dart';
 import 'package:imltest_bhavesh/Screen/LoginScreen.dart';
 
+import '../Controllers/auth_controller.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -52,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: InkWell(onTap: (){
+                  AuthController.authInstance.signOut();
                   Get.to(LoginScreen());
                 },
                 child: Icon(Icons.logout)),
